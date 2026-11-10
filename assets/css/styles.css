@@ -20,7 +20,7 @@
   --radius: 10px;
   --radius-sm: 6px;
   --container: 1160px;
-  --header-h: 80px;
+  --header-h: 72px;
 }
 
 /* ---------- Base ---------- */
@@ -244,8 +244,8 @@ a {
 }
 
 .brand img {
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
 }
 
 .site-nav {
@@ -404,28 +404,27 @@ a {
 }
 
 .hero-copy {
-  padding: clamp(56px, 8vw, 96px) 0 40px;
+  padding: clamp(40px, 7vw, 56px) 0 32px;
 }
 
 .hero h1 {
-  max-width: 15ch;
   color: var(--white);
-  font-size: clamp(2.3rem, 3.4vw + 1rem, 3.5rem);
-  line-height: 1.08;
+  font-size: clamp(2.2rem, 2vw + 1.4rem, 2.9rem);
+  line-height: 1.1;
   letter-spacing: -0.015em;
 }
 
 .lead {
-  max-width: 32em;
-  margin: 26px 0 0;
+  max-width: 36em;
+  margin: 18px 0 0;
   color: var(--steel-soft);
-  font-size: clamp(1.1rem, 0.4vw + 1rem, 1.25rem);
-  line-height: 1.65;
+  font-size: clamp(1.08rem, 0.3vw + 1rem, 1.18rem);
+  line-height: 1.6;
 }
 
 .hero-founder {
-  max-width: 34em;
-  margin: 14px 0 0;
+  max-width: 40em;
+  margin: 10px 0 0;
   color: var(--steel);
 }
 
@@ -433,25 +432,28 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 36px;
+  margin-top: 26px;
 }
 
-/* The photo's backdrop is the same navy as the hero; fade its edges so it sits in the section. */
+/* The photo's backdrop is the same navy as the hero, so only its bottom edge fades out
+   (plus a hairline fade on the other edges to hide any compression seam). */
 .hero-photo {
   justify-self: center;
-  width: min(100%, 340px);
+  width: min(100%, 300px);
 }
 
 .hero-photo img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   -webkit-mask-image:
-    linear-gradient(to bottom, transparent 0, #000 4%, #000 70%, transparent 100%),
-    linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+    linear-gradient(to bottom, transparent 0, #000 3%, #000 76%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 3%, #000 97%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to bottom, transparent 0, #000 4%, #000 70%, transparent 100%),
-    linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+    linear-gradient(to bottom, transparent 0, #000 3%, #000 76%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 3%, #000 97%, transparent 100%);
   mask-composite: intersect;
 }
 
@@ -463,20 +465,20 @@ a {
 
 @media (min-width: 900px) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     gap: 48px;
     align-items: end;
   }
 
   .hero-copy {
     align-self: center;
-    padding: 96px 0;
+    padding: 44px 0;
   }
 
   .hero-photo {
     justify-self: end;
-    width: min(100%, 440px);
-    margin-top: 40px;
+    width: min(100%, 390px);
+    margin-top: 28px;
   }
 }
 
@@ -507,6 +509,15 @@ a {
 }
 
 /* ---------- Services ---------- */
+
+/* Tighter top spacing so the first service group shows on load on most laptop screens. */
+.section-services {
+  padding-top: clamp(36px, 3.4vw, 44px);
+}
+
+.section-services .section-head {
+  margin-bottom: 18px;
+}
 
 .service-groups {
   display: grid;
@@ -550,11 +561,19 @@ a {
 }
 
 .section-note {
-  max-width: 62ch;
-  margin: 48px 0 0;
+  max-width: 74ch;
+  margin-top: 44px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
+}
+
+.section-note p {
+  margin: 0 0 10px;
   color: var(--muted);
+}
+
+.section-note p:first-child {
+  color: var(--text);
 }
 
 /* ---------- About ---------- */
