@@ -9,10 +9,10 @@ Live (temporary): https://andrewgaldys.github.io/geforensics/
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | All page content (single page: Services, Approach, About, Contact) |
+| `index.html` | All page content (single page: Services, About, Contact) |
 | `assets/css/styles.css` | Styles. Brand colors are the variables at the top (`--navy` is the logo navy, `#0A192F`) |
 | `assets/js/main.js` | Mobile menu, "Copy email" button, footer year |
-| `assets/img/` | Logo, favicons, and the social-share image (`og-image.png`) |
+| `assets/img/` | Logo, headshot (`michael-galdys.jpg`, backdrop matched to the logo navy), favicons, and the social-share image (`og-image.png`) |
 | `michael-galdys.vcf` | "Save contact card" download |
 | `404.html` | Page-not-found screen |
 
@@ -55,7 +55,7 @@ within a minute or two.
    **Do not touch the MX or TXT records.** They route email for `michael@geforensics.com`.
    Remove any old A/AAAA records on `@` that point elsewhere (for example a registrar "parking" page).
 3. Wait for DNS to propagate (minutes to a few hours), then tick **Enforce HTTPS** in Settings > Pages.
-4. In `index.html`, replace `https://andrewgaldys.github.io/geforensics/` with `https://geforensics.com/`
-   in the `og:url` and `og:image` tags so link previews use the new domain.
+4. In `index.html`, replace every `https://andrewgaldys.github.io/geforensics/` with `https://geforensics.com/`
+   (the `og:url` and `og:image` tags and the structured data) so link previews use the new domain.
 5. Optional but recommended: verify the domain under your GitHub account
    (**Settings > Pages > Verified domains**) so no one else can claim it on GitHub Pages.
