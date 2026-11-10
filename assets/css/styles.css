@@ -463,6 +463,18 @@ a {
   }
 }
 
+/* Phones and tablets: keep the top section to the intro so the services come right after it.
+   The headshot moves to the About section (.about-photo). */
+@media (max-width: 899.98px) {
+  .hero-copy {
+    padding-bottom: 48px;
+  }
+
+  .hero-photo {
+    display: none;
+  }
+}
+
 @media (min-width: 900px) {
   .hero-inner {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
@@ -601,6 +613,20 @@ a {
 
 .about-copy h2 {
   margin-bottom: 22px;
+}
+
+.about-photo {
+  display: none;
+}
+
+@media (max-width: 899.98px) {
+  .about-photo {
+    display: block;
+    width: min(100%, 280px);
+    height: auto;
+    margin-bottom: 28px;
+    border-radius: var(--radius);
+  }
 }
 
 .about-copy .text-link {
