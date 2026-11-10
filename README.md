@@ -21,6 +21,10 @@ Live (temporary): https://andrewgaldys.github.io/geforensics/
 Open `index.html` and edit the text directly. Phone and email appear in several places, so search for
 `485-8604` and `michael@geforensics.com` if they ever change (also update `michael-galdys.vcf`).
 
+After changing `styles.css` or `main.js`, bump the `?v=` number where `index.html` loads them
+(e.g. `styles.css?v=2` to `?v=3`). GitHub Pages lets browsers cache files for 10 minutes, and the new
+number makes returning visitors fetch the updated file right away.
+
 ## Preview locally
 
 ```bash
